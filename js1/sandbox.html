@@ -8,7 +8,8 @@
 
 <body>
 
-
+    <h1>Switch</h1>
+    <br>
     <label><span>Select City: </span></label>
     <select id="city" name="region">
 
@@ -18,9 +19,9 @@
         <option value="Placerton">Placerton</option>
         <option value="Springfield">Springfield</option>
     </select>
-<!--    <input type="text" id="InputBox">-->
 
-    <button type="button" id="clickme" >Get Info</button>
+
+    <button type="button" id="clickme">Get Info</button>
     <div id="name"></div>
     <div id="motto"></div>
     <div id="yearFounded"></div>
@@ -32,22 +33,40 @@
 
 
     <h1>Loops</h1>
-    <button type="button" id="loop1" >WhileLoop</button>
+    <button type="button" id="loop1">WhileLoop</button>
     <div id="l1"></div>
-    <button type="button" id="loop2" >For Loop</button>
+    <button type="button" id="loop2">For Loop</button>
     <div id="l2"></div>
-    <button type="button" id="loop3" >Do While Loop</button>
+    <button type="button" id="loop3">Do While Loop</button>
     <div id="l3"></div>
 
-   <h1>Conditionals</h1>
+    <h1>Conditionals</h1>
     <select id="tru" name="con">
 
     <option value="Select" selected disabled>True or false</option>
     <option value=1>True</option>
     <option value=2>False</option>
     </select>
-    <button type="button" id="truefalse" >Conditional</button>
+    <button type="button" id="truefalse">Conditional</button>
     <div id="tf"></div>
+
+
+    <h1>Functions and Parameters</h1>
+
+    Principal<input type="text" id="Principal"><br> Annual Rate<input type="text" id="Rate"><br> Number Of years<input type="text" id="Years"><br> Periods Per year<input type="text" id="Periods"><br> Payments made<input type="text" id="Pay"><br> payment <input type="text" id="output1"><br> remaing balance <input type="text" id="output2"><br> payment <button type="button" onclick="doPayment()">payment</button> balance <button type="button" onclick="doBalance()">balance</button>
+    <div id="output"></div>
+
+    <h1>Arrays</h1>
+    <h2>single dimmension array</h2>
+    <button type="button" id="a1button">Array Loop</button>
+    <div id="a1"></div>
+
+    <h2>Associative Array/Object</h2>
+
+    <button type="button" id="bike">bike info</button>
+    <div id="bikeout"></div>
+
+
 
     <footer>
         <br>
