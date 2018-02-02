@@ -115,14 +115,14 @@ document.getElementById('clickme').onclick = function submit() {  // This is the
 
 
     var requestURL = 'https://byui-cit230.github.io/towndata.json';  // Fisrt, we create an object holding the URL string of our JSON.
-var request = new XMLHttpRequest(); // Next we create an instance of the XMLHttpRequest method.
-request.open('GET', requestURL);  // We then access the .open submethod with arguments "GET" and "requestURL"
-request.responseType = 'json'  // This sets the "responseType" of the XMLHttpRequest to "JSON">
-request.send(); // This sends the request.
+    var request = new XMLHttpRequest(); // Next we create an instance of the XMLHttpRequest method.
+    request.open('GET', requestURL);  // We then access the .open submethod with arguments "GET" and "requestURL"
+    request.responseType = 'json'  // This sets the "responseType" of the XMLHttpRequest to "JSON">
+    request.send(); // This sends the request.
     request.onload = function () {
-var info = request.response; // This sets the var "info" to the value of our XMLHttpRequest.Response>
+    var info = request.response; // This sets the var "info" to the value of our XMLHttpRequest.Response>
 
-tData(info); // call to plug our json into the function below>
+    tData(info); // call to plug our json into the function below>
     }
 
 function tData(json) {  //accessing our json and adding it to html
