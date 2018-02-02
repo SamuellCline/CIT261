@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        pre{background-color: beige;}
+    </style>
+</head>
+
+<body>
+<h1>JASON-Parse and Stringify</h1>
+    <p>This section will discuss the basics of JSON parse and Stringify.</p>
+<h2>
+    Example HTML
+    </h2>
+    <p>The following is the html used in my sandbox.</p>
+    <pre>
+&lt;!DOCTYPE html>
+&lt;html lang="">
+&lt;head>
+    &lt;meta charset="utf-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>&lt;/title>
+&lt;/head>
+
+&lt;body>
+
+    &lt;h2>Associative Array/Object&lt;/h2>
+
+    &lt;button type="button" id="bike1">Stringify&lt;/button>
+    &lt;div id="bikeout1">&lt;/div>
+    &lt;button type="button" id="bike2">Parse&lt;/button>
+    &lt;div id="bikeout2">&lt;/div>
+
+
+
+    &lt;footer>
+        &lt;br>
+        &lt;br>
+        &lt;br>
+        &lt;aside>
+            Contact Email: SamuellCline@gmail.com
+        &lt;/aside>
+        &lt;p class="footer-bar">&copy;2018 All Rights Reserved | Samuel Cline | &lt;span id="date">&lt;/span>&lt;/p>
+        &lt;script src="/cit261/js/time.js">&lt;/script>
+    &lt;/footer>
+&lt;/body>
+&lt;/html>
+&lt;link rel="stylesheet" href="">&lt;script src="js/jasontest.js">&lt;/script>
+    </pre>
+<h2>Example Javascript</h2>
+    <p>This is the javascript used to in the sandbox,</p>
+
+    <pre>
+
+var bike = {
+    "make": "Honda",
+    "model": "CB300F",
+    "color": "Black",
+    "weight": 348,
+    "displacement": "286cc",
+    "vehicalClass": "Sport"};
+document.getElementById('bike1').onclick = function objectBike1() {
+
+    var bikeString = JSON.stringify(bike);
+    document.getElementById('bikeout1').innerHTML = bikeString;
+
+}
+document.getElementById('bike2').onclick = function objectBike2() {
+    var bikeString = JSON.stringify(bike);
+    var bikeJSON = JSON.parse(bikeString);
+    document.getElementById('bikeout2').innerHTML = bikeJSON;
+}
+    </pre>
+    <p>There are two buttons on this html page, the first will take the JSON object "bike" and stringify it. The second button, for convenience of this example, stringifys it, and then parses the string back into a JSON Object</p>
+
+    <footer>
+        <br>
+        <br>
+        <br>
+        <aside>
+            Contact Email: SamuellCline@gmail.com
+        </aside>
+        <p class="footer-bar">&copy;2018 All Rights Reserved | Samuel Cline | <span id="date"></span></p>
+        <script src="/cit261/js/time.js"></script>
+    </footer>
+</body>
+</html>
+<link rel="stylesheet" href=""><script src=""></script>
