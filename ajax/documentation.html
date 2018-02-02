@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        pre{background-color: beige;}
+    </style>
+</head>
+
+<body>
+<h1>AJAX Documentation</h1>
+    <p>This section will discuss the basics of AJAX and how it works. AJAX is an acronym meaning, <b>A</b>synchronous <b>J</b>avascript <b>A</b>nd <b>X</b>ML. It is often refered to incorrectly as a programming language. It is simply Javascript.</p>
+<h2>
+    Example HTML
+    </h2>
+    <p>The following is the html used in my sandbox.</p>
+    <pre>
+<!--
+        <!DOCTYPE html>
+        <html lang="">
+            <head>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title></title>
+            </head>
+
+            <body>
+
+
+                <label><span>Select City: </span></label>
+                <select id="city" name="region">
+
+                    <option value="Select" selected disabled>Select City</option>
+                    <option value="Franklin">Franklin</option>
+                    <option value="Greenville">Greenville</option>
+                    <option value="Placerton">Placerton</option>
+                    <option value="Springfield">Springfield</option>
+                </select>
+                    <input type="text" id="InputBox">
+
+                <button type="button" id="clickme" onclick="data.js">Get Info</button>
+                <div id="name"></div>
+                <div id="motto"></div>
+                <div id="yearFounded"></div>
+                <div id="currentPopulation"></div>
+                <div id="averageRainfall"></div>
+                <div id="events"></div>
+
+            </body>
+        </html>
+        <link rel="stylesheet" href=""><script src="js/data.js"></script>
+-->
+        &lt;!DOCTYPE html>
+        &lt;html lang="">
+            &lt;head>
+                &lt;meta charset="utf-8">
+                &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+                &lt;title>&lt;/title>
+            &lt;/head>
+
+            &lt;body>
+
+
+                &lt;label>&lt;span>Select City: &lt;/span>&lt;/label>
+                &lt;select id="city" name="region"> &lt;!-- this is a selection input
+
+                    &lt;option value="Select" selected disabled>Select City&lt;/option> &lt;!-- these are values for the selection
+                    &lt;option value="Franklin">Franklin&lt;/option>
+                    &lt;option value="Greenville">Greenville&lt;/option>
+                    &lt;option value="Placerton">Placerton&lt;/option>
+                    &lt;option value="Springfield">Springfield&lt;/option>
+                &lt;/select>
+
+
+                &lt;button type="button" id="clickme">Get Info&lt;/button> &lt;!-- This is the button that runs the linked javascript
+                &lt;div id="name">&lt;/div> &lt;!-- These are the "divs" used to output our data from our json
+                &lt;div id="motto">&lt;/div>
+                &lt;div id="yearFounded">&lt;/div>
+                &lt;div id="currentPopulation">&lt;/div>
+                &lt;div id="averageRainfall">&lt;/div>
+                &lt;div id="events">&lt;/div>
+
+            &lt;/body>
+        &lt;/html>
+        &lt;link rel="stylesheet" href="">&lt;script src="js/data.js">&lt;/script> &lt;!-- This is the link to our script
+    </pre>
+<h2>Example Javascript</h2>
+    <p>This is the javascript used to in the sandbox,</p>
+
+    <pre>
+document.getElementById('clickme').onclick = function submit() {  // This is the function that runs when the button with id of "clickme" is clicked on the html
+    var i;
+    var selection = document.getElementById('city').value;  // This switch is used to set the variable "i" which is used to access the array.
+    switch (selection) {
+        case 'Franklin':
+            i = 0;
+            break;
+        case 'Greenville':
+            i = 1;
+            break;
+        case 'Placerton':
+            i = 2;
+            break;
+        case 'Springfield':
+            i = 3;
+            break;
+        default:
+            i = null;
+            break;
+    }
+
+
+
+
+    var requestURL = 'https://byui-cit230.github.io/towndata.json';  // Fisrt, we create an object holding the URL string of our JSON.
+var request = new XMLHttpRequest(); // Next we create an instance of the XMLHttpRequest method.
+request.open('GET', requestURL);  // We then access the .open submethod with arguments "GET" and "requestURL"
+request.responseType = 'json'  // This sets the "responseType" of the XMLHttpRequest to "JSON">
+request.send(); // This sends the request.
+    request.onload = function () {
+var info = request.response; // This sets the var "info" to the value of our XMLHttpRequest.Response>
+
+tData(info); // call to plug our json into the function below>
+    }
+
+function tData(json) {  //accessing our json and adding it to html
+
+
+        var name = document.getElementById("name");  // Variables created and associated with the divs>
+        var motto = document.getElementById("motto");
+        var yearFounded = document.getElementById("yearFounded");
+        var currentPopulation = document.getElementById("currentPopulation");
+        var averageRainfall = document.getElementById("averageRainfall");
+        var events = document.getElementById("events");
+        name.textContent = "Name: " + json.towns[i].name;  // because our json is an array, we use our "i" var from above to move through different values of the array.>
+        motto.textContent = "Motto: " + json.towns[i].motto;
+        yearFounded.textContent = "Year Founded: " + json.towns[i].yearFounded;
+        currentPopulation.textContent = "Current Population: " + json.towns[i].currentPopulation;
+        averageRainfall.textContent = "Average Rainfall: " + json.towns[i].averageRainfall;
+
+
+
+    }
+}
+    </pre>
+<p>An XMLHttpRequest is broken up into several steps, open, send, and the response. It's a fairly straitforward approach to accessing external content from within your website without having to host or constantly update the content yourself.</p>
+
+    <footer>
+        <br>
+        <br>
+        <br>
+        <aside>
+            Contact Email: SamuellCline@gmail.com
+        </aside>
+        <p class="footer-bar">&copy;2018 All Rights Reserved | Samuel Cline | <span id="date"></span></p>
+        <script src="/js/time.js"></script>
+    </footer>
+</body>
+</html>
+<link rel="stylesheet" href=""><script src=""></script>

@@ -1,28 +1,23 @@
-//function addData()
-
-
-document.getElementById('clickme').onclick = function submit()
-{
-var i;
+document.getElementById('clickme').onclick = function submit() {
+    var i;
     var selection = document.getElementById('city').value;
-        switch (selection)
-        {
-            case 'Franklin':
-                i = 0;
-                break;
-            case 'Greenville':
-                i = 1;
-                break;
-            case 'Placerton':
-                i = 2;
-                break;
-            case 'Springfield' :
-                i = 3;
-                break;
-            default:
-                i = null;
-                break;
-        }
+    switch (selection) {
+        case 'Franklin':
+            i = 0;
+            break;
+        case 'Greenville':
+            i = 1;
+            break;
+        case 'Placerton':
+            i = 2;
+            break;
+        case 'Springfield':
+            i = 3;
+            break;
+        default:
+            i = null;
+            break;
+    }
 
 
 
@@ -32,11 +27,12 @@ var i;
     request.open('GET', requestURL);
     request.responseType = 'json'
     request.send();
-    request.onload = function() {
+    request.onload = function () {
         var info = request.response;
 
         tData(info);
     }
+
     function tData(json) {
 
 
@@ -51,7 +47,7 @@ var i;
         yearFounded.textContent = "Year Founded: " + json.towns[i].yearFounded;
         currentPopulation.textContent = "Current Population: " + json.towns[i].currentPopulation;
         averageRainfall.textContent = "Average Rainfall: " + json.towns[i].averageRainfall;
-//        events.textContent = json.towns[0].events[0] + "    " + json.towns[0].events[1] + "     " +json.towns[0].events[2];
+
 
 
     }
