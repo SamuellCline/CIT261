@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        pre{background-color: beige;}
+    </style>
+</head>
+
+<body>
+<h1>Javascript Objects</h1>
+    <p>This section will discuss the basics of Java Script Objects.</p>
+<h2>
+    Example HTML
+    </h2>
+    <p>The following is the html used in my sandbox.</p>
+    <pre>
+&lt;!DOCTYPE html>
+&lt;html lang="">
+&lt;head>
+    &lt;meta charset="utf-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>&lt;/title>
+&lt;/head>
+
+&lt;body>
+
+    &lt;h1>Local Storage&lt;/h1>
+    &lt;h2>Create your login&lt;/h2>
+    Username: &lt;input type="text" id="name">&lt;br>
+    Password: &lt;input type="password" id="pass">&lt;br>
+
+    &lt;button type="button" id="hash">Create your login&lt;/button>
+    &lt;div id="hashout">&lt;/div>
+&lt;br>
+    &lt;br>
+    &lt;br>
+    &lt;br>
+    &lt;h2>Test your login&lt;/h2>
+    Username: &lt;input type="text" id="namel">&lt;br>
+    Password: &lt;input type="password" id="passl">&lt;br>
+
+    &lt;button type="button" id="login">login&lt;/button>
+    &lt;div id="hashout2">&lt;/div>
+
+
+    &lt;footer>
+        &lt;br>
+        &lt;br>
+        &lt;br>
+        &lt;aside>
+            Contact Email: SamuellCline@gmail.com
+        &lt;/aside>
+        &lt;p class="footer-bar">&copy;2018 All Rights Reserved | Samuel Cline | &lt;span id="date">&lt;/span>&lt;/p>
+        &lt;script src="/cit261/js/time.js">&lt;/script>
+    &lt;/footer>
+&lt;/body>
+&lt;/html>
+&lt;link rel="stylesheet" href="">&lt;script src="js/data.js">&lt;/script>
+
+    </pre>
+<h2>Example Javascript</h2>
+    <p>This is the javascript used to in the sandbox,</p>
+
+    <pre>
+//ACCOUNT CREATION
+document.getElementById('hash').onclick = function hash() {
+    if (document.getElementById('pass').value !== "" && document.getElementById('name').value !== "") {
+        //the purpose of combination is to link the password to the username for authentication
+
+        var combination = " ";
+        var n = document.getElementById('name').value;
+        var x = document.getElementById('pass').value;
+        var combination = n + x;
+
+        var hash = hashCode(combination);
+        //    document.getElementById('hashout').innerHTML = hash;
+        localStorage.setItem("uName" + n, n);
+        localStorage.setItem(n + "Password", hash);
+    } else {
+        document.getElementById('hashout').innerHTML = "YOU CANNOT HAVE A BLANK USERNAME OR PASSWORD!";
+    }
+
+
+}
+
+
+//LOGIN
+
+document.getElementById('login').onclick = function hash() {
+    if (document.getElementById('passl').value !== "" && document.getElementById('namel').value !== "") {
+        var nl = document.getElementById('namel').value;
+        var xl = document.getElementById('passl').value;
+        var combination2 = nl + xl;
+        var hash2 = hashCode(combination2);
+        var nl2 = localStorage.getItem("uName" + nl);
+        var xl2 = localStorage.getItem(nl + "Password");
+        if (nl == nl2 && hash2 == xl2) {
+            document.getElementById('hashout2').innerHTML = "YOUR LOGIN IS CORRECT";
+        } else {
+            document.getElementById('hashout2').innerHTML = "YOUR LOGIN IS INCORRECT";
+        }
+
+    } else {
+        document.getElementById('hashout2').innerHTML = "YOU CANNOT HAVE A BLANK USERNAME OR PASSWORD!";
+    }
+}
+
+//JS Implementation of Java's String.hashCode()
+function hashCode(str) {
+
+    var hash = 0;
+
+    if (str.length == 0) return hash;
+
+    for (i = 0; i &lt; str.length; i++) {
+
+        char = str.charCodeAt(i);
+        hash = ((hash &lt;&lt; 5) - hash) + char;
+        hash = hash & hash;
+
+    }
+
+    return hash;
+
+}
+
+    </pre>
+<p>This a basic example of creating and accessing local storage properties, with a twist. The first section creates a mock "login" and creates a hash of the username and password combination. It then stores the username and hash in local storage.<br> Notice the name of the local storage preferance is also based on the input of the user, this way multiple usernames can be created and associated with their password. The second function runs the hash again and then compares the user input against local storage... This method would be more useful in a locally hosted application or in a solution where you would want these "user accounts" only stored on a local machine and not "cloud" based.<br> Also note that local storage can also be used with dot notation. </p>
+
+    <footer>
+        <br>
+        <br>
+        <br>
+        <aside>
+            Contact Email: SamuellCline@gmail.com
+        </aside>
+        <p class="footer-bar">&copy;2018 All Rights Reserved | Samuel Cline | <span id="date"></span></p>
+        <script src="/cit261/js/time.js"></script>
+    </footer>
+</body>
+</html>
+<link rel="stylesheet" href=""><script src=""></script>
