@@ -59,3 +59,21 @@ function hashCode(str) {
     return hash;
 
 }
+
+document.getElementById('fname').value = localStorage.getItem("firstName");
+document.getElementById('lname').value = localStorage.getItem("lastName");
+document.getElementById('food').value = localStorage.getItem("food");
+
+document.getElementById('profile').onclick = function profile() {
+    var person = {
+        firstName: document.getElementById('fname').value,
+        lastName : document.getElementById('lname').value,
+        food       :  document.getElementById('food').value
+    };
+
+    localStorage.setItem("firstName", person.firstName);
+    localStorage.setItem("lastName", person.lastName);
+    localStorage.setItem("food", person.food);
+
+}
+
