@@ -1,5 +1,5 @@
 
-document.addEventListener("ontouchstart", display);
+document.getElementById('div1').addEventListener("click", display);
 
 function display() {
     document.getElementById('map1').style.display = "block";
