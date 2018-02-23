@@ -2,7 +2,7 @@
 window.addEventListener("ontouchstart", display());
 
 function display() {
-//    document.getElementById('map1').style.display = "block";
+    document.getElementById('map1').style.display = "block";
     var x = document.getElementById("output");
     navigator.geolocation.getCurrentPosition(showPosition);
     function showPosition(position) {
