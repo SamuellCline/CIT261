@@ -1,5 +1,5 @@
 
-document.getElementById('div1').addEventListener("click", display);
+document.getElementById('div1').addEventListener("touchstart", display);
 
 function display() {
     document.getElementById('map1').style.display = "block";
