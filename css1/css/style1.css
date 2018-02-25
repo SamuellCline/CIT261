@@ -1,0 +1,27 @@
+.div1{
+/*    position: relative;*/
+    display:flex;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    flex-flow: row wrap;
+    height: 200px;
+    width:200px;
+    background-color: red;
+/*transition: background-color 2s;*/
+
+    color: blue;
+
+
+}
+
+.div1:active{
+    position:relative;
+/*    left:400px;*/
+/*    width: 200px;*/
+    background-color: blue;
+    color:red;
+    transition: 2s;
+    transition; left 1s;
+
+}

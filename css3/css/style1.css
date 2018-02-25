@@ -1,0 +1,42 @@
+.s1{
+    width:500px;
+    height: 500px;
+}
+.div1{
+    position: relative;
+    display:flex;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    flex-flow: row wrap;
+    height: 200px;
+    width:200px;
+    background-color: red;
+/*transition: background-color 2s;*/
+    animation-name: test1;
+    animation-duration: 4s;
+    color: blue;
+
+
+}
+
+@keyframes test1 {
+    0%   {background-color:red; color:blue; left:0px; top:0px;}
+    25%  {background-color:blue; color:red; left:300px; top:0px;}
+    50%  {background-color:red; color:blue; left:300px; top:300px;}
+    75%  {background-color:blue;  color:red;left:0px; top:300px;}
+    100% {background-color:red; color:blue; left:0px; top:0px; transform: rotate(2880deg);}
+}
+
+
+.div1:active{
+    position:relative;
+    /*    left:400px;*/
+    /*    width: 200px;*/
+    background-color: blue;
+    color:red;
+    transition: 2s;
+    transition; left 1s;
+
+}
+

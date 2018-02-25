@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        pre{background-color: beige;}
+    </style>
+</head>
+
+<body>
+<h1>Javascript Objects</h1>
+    <p>This section will discuss the basics of CSS transformations</p>
+<h2>
+    Example HTML
+    </h2>
+    <p>The following is the html used in my sandbox.</p>
+    <pre>
+&lt;!DOCTYPE html>
+&lt;html lang="">
+&lt;head>
+    &lt;meta charset="utf-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>&lt;/title>
+    &lt;link rel = "stylesheet"
+          type = "text/css"
+          href = "/css1/css/style1.css" />
+&lt;/head>
+
+&lt;body>
+
+&lt;div class="div1">
+    &lt;p>Click Me!&lt;/p>
+    &lt;/div>
+
+    &lt;footer>
+        &lt;br>
+        &lt;br>
+        &lt;br>
+        &lt;aside>
+            Contact Email: SamuellCline@gmail.com
+        &lt;/aside>
+        &lt;p class="footer-bar">&copy;2018 All Rights Reserved | Samuel Cline | &lt;span id="date">&lt;/span>&lt;/p>
+        &lt;script src="/cit261/js/time.js">&lt;/script>
+    &lt;/footer>
+&lt;/body>
+&lt;/html>
+&lt;link rel="stylesheet" href="">&lt;script src="js/data.js">&lt;/script>
+ </pre>
+<h2>Example CSS</h2>
+    <p>This is the CSS used to in the sandbox,</p>
+
+    <pre>
+.div1{
+/*    position: relative;*/
+    display:flex;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    flex-flow: row wrap;
+    height: 200px;
+    width:200px;
+    background-color: red;
+/*transition: background-color 2s;*/
+
+    color: blue;
+
+
+}
+
+.div1:active{
+    position:relative;
+/*    left:400px;*/
+/*    width: 200px;*/
+    background-color: blue;
+    color:red;
+    transition: 2s;
+    transition; left 1s;
+
+}
+
+
+    </pre>
+    <p>This example uses the :active link state to change the propteries of CSS with a click. In this case, the properties are background color and text color.</p>
+
+    <footer>
+        <br>
+        <br>
+        <br>
+        <aside>
+            Contact Email: SamuellCline@gmail.com
+        </aside>
+        <p class="footer-bar">&copy;2018 All Rights Reserved | Samuel Cline | <span id="date"></span></p>
+        <script src="/cit261/js/time.js"></script>
+    </footer>
+</body>
+</html>
+<link rel="stylesheet" href=""><script src=""></script>
