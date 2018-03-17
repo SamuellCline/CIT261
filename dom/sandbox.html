@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+
+    <div id="div123">
+        <img id="first" src="img/icon.jpg">
+    </div>
+
+    <button id="button1">add another picture</button>
+    <button id="button2">insert before picture</button>
+    <button id="button3">remove image</button>
+<p>note, you the add and insert before functions apear almost identical.</p>
+</body>
+</html>
+<style></style>
+<script>
+document.getElementById('button1').onclick = function add(){
+    var img2 = document.createElement("img");
+    img2.setAttribute("src", "img/icon.jpg");
+
+    document.getElementById("div123").appendChild(img2);
+}
+
+document.getElementById('button2').onclick = function insert(){
+
+    var img2 = document.createElement("img");
+    img2.setAttribute("src", "img/icon.jpg");
+
+    var par = document.getElementById('div123');
+    var ch = document.getElementById('first');
+
+    par.insertBefore(img2,ch);
+}
+document.getElementById('button3').onclick = function remove(){
+var par = document.getElementById('div123');
+
+    par.removeChild(par.childNodes[0]);
+    }
+</script>
