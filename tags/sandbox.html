@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+
+    <video width="960" height="540" controls>
+        <source src="video/jelly.mp4" type="video/mp4">
+    </video>
+<br>
+    <p>above is as sample video, below is an audio file.</p>
+    <audio controls>
+        <source src="audio/rack.mp3" type="audio/mpeg">
+    </audio>
+    <br>
+    <p>This is a sample of a canvas.</p>
+    <canvas id="canvas1" width="800" height="400"></canvas>
+
+</body>
+</html>
+<style></style>
+<script>
+
+    var img = document.createElement('img');
+    img.src = 'img/icon.jpg';
+    var c = document.getElementById("canvas1");
+    var ct = c.getContext("2d");
+    ct.fillStyle = ct.createPattern(img,'repeat');
+
+    ct.rect(0, 0, 770, 385);
+
+    ct.fill();
+
+
+</script>
